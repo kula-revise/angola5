@@ -920,7 +920,7 @@ const FLOW = [
   {
     "type": "content",
     "tag": "How this works",
-    "html": "<h2>How this one works</h2><p>This run is built to exam standard. The four lessons behind you had one source and a handful of questions; this is the full shape, with several sources, questions that climb from quoting to judging, and a paragraph at the end.</p><p>Adapted means the sources have been replaced with public documents that carry the same points, because the originals are still in copyright. The questions and the mark allocations are the ones the exam uses.</p>",
+    "html": "<h2>How this one works</h2><p>This run is built to exam standard. The four lessons behind you had one source and a handful of questions. This is the full shape. Several sources, questions that climb from quoting to judging, and a paragraph at the end.</p><p>Adapted means the sources have been replaced with public documents that carry the same points, because the originals are still in copyright. The questions and the mark allocations are the ones the exam uses.</p>",
     "remember": "Built to exam standard: real allocations, our wording, replacement sources."
   },
   {
@@ -1718,7 +1718,7 @@ function showResults(){
   });
   /* The button at the end of the lesson is the thing that continues. It does
      not point at a control somewhere else on the page. */
-  document.getElementById("finish-btn").addEventListener("click",()=>{ KulaLMS.advance(); });
+  document.getElementById("finish-btn").onclick = ()=>{ KulaLMS.advance(); };
   KulaLMS.completed();
 }
 
