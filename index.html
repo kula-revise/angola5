@@ -272,13 +272,13 @@ body.dark .option-btn, body.dark .opt-btn { border-color: rgba(242,237,248,0.20)
 
 /* Answer states: dark grounds with a coloured edge, text stays --ink. */
 body.dark .option-btn.correct {
-  background: rgba(61,220,242,0.16) !important;
-  border-color: #3DDCF2 !important;
+  background: rgba(74,222,128,0.34);
+  border-color: #4ADE80;
   color: var(--ink) !important;
 }
 body.dark .option-btn.wrong {
-  background: rgba(255,110,207,0.16) !important;
-  border-color: #FF6ECF !important;
+  background: rgba(255,107,107,0.36);
+  border-color: #FF8787;
   color: var(--ink) !important;
 }
 body.dark .option-btn.correct .opt-text,
@@ -318,13 +318,13 @@ body.dark .quiz-foot a, body.dark .quiz-foot { color: var(--clay) !important; }
 body.dark .option { background: var(--cut) !important; border-color: rgba(242,237,248,0.18) !important; color: var(--ink) !important; }
 body.dark .option.selected { background: rgba(255,110,207,0.14) !important; border-color: #FF6ECF !important; }
 body.dark .option.correct {
-  background: rgba(61,220,242,0.16) !important;
-  border-color: #3DDCF2 !important;
+  background: rgba(74,222,128,0.34);
+  border-color: #4ADE80;
   color: var(--ink) !important;
 }
 body.dark .option.wrong {
-  background: rgba(255,110,207,0.16) !important;
-  border-color: #FF6ECF !important;
+  background: rgba(255,107,107,0.36);
+  border-color: #FF8787;
   color: var(--ink) !important;
 }
 body.dark .option.correct .opt-text,
@@ -492,8 +492,8 @@ body.dark .figure img { filter: brightness(0.9) contrast(1.02); }
   .option:hover:not(:disabled) { background: var(--cut); border-color: var(--a1); }
   .option:disabled { cursor: default; }
   .option.selected { background: var(--cut); border-color: var(--a1); border-width: 2px; padding: 0.94rem 0.99rem; }
-  .option.correct { background: var(--ok-bg); border-color: var(--a2); border-width: 2px; padding: 0.94rem 0.99rem; }
-  .option.wrong { background: var(--no-bg); border-color: var(--clay); border-width: 2px; padding: 0.94rem 0.99rem; }
+  .option.correct { background: rgba(34,197,94,0.30); border-color: #15803D; border-width: 2px; padding: 0.94rem 0.99rem; }
+  .option.wrong { background: rgba(239,68,68,0.28); border-color: #DC2626; border-width: 2px; padding: 0.94rem 0.99rem; }
   /* The dimmed state fell below readable contrast at 360px. One rule per mode,
      and nothing later in the file competes with it. */
   .option.dimmed, .option-btn.dimmed { opacity: 0.82; }
@@ -614,7 +614,7 @@ body.dark { --ok: #93D98A; --ok-rgb: 147,217,138; --on-ok: #0E0A13; }
 
 .option.correct, .option-btn.correct,
 body.dark .option.correct, body.dark .option-btn.correct {
-  background: var(--ok) !important;
+  background: rgba(74,222,128,0.34);
   border: 2px solid var(--ok) !important;
   box-shadow: 5px 5px 0 rgba(var(--ok-rgb),0.30) !important;
   color: var(--on-ok) !important;
@@ -630,7 +630,7 @@ body.dark .option.correct .opt-mark, body.dark .option-btn.correct .opt-mark {
 .option.correct .opt-letter, .option-btn.correct .opt-letter { opacity: 0.85; }
 
 .option.wrong, .option-btn.wrong {
-  background: var(--no-bg) !important;
+  background: rgba(239,68,68,0.28);
   border: 2px solid var(--a1) !important;
   box-shadow: none !important;
 }
@@ -853,6 +853,35 @@ body.dark .inter-item.ok span, body.dark .inter-item.ok .rank { color: var(--on-
   .top-meta { padding-right: 9.5rem; }
 }
 
+
+/* The answer fills carry the meaning, so the words on top of them have to stay
+   legible on both fills in both modes. Before this, correct-option text kept a
+   near-white colour that sat on a light green fill at 1.22 to 1. The hue lives
+   in the fill and the border; the text is plain ink. */
+.option.correct .opt-text,
+.option-btn.correct .opt-text,
+.option.correct .opt-letter,
+.option-btn.correct .opt-letter,
+.option.correct .opt-mark,
+.option-btn.correct .opt-mark,
+.option.wrong .opt-text,
+.option-btn.wrong .opt-text,
+.option.wrong .opt-letter,
+.option-btn.wrong .opt-letter,
+.option.wrong .opt-mark,
+.option-btn.wrong .opt-mark { color: #101418 !important; opacity: 1 !important; }
+body.dark .option.correct .opt-text,
+body.dark .option-btn.correct .opt-text,
+body.dark .option.correct .opt-letter,
+body.dark .option-btn.correct .opt-letter,
+body.dark .option.correct .opt-mark,
+body.dark .option-btn.correct .opt-mark,
+body.dark .option.wrong .opt-text,
+body.dark .option-btn.wrong .opt-text,
+body.dark .option.wrong .opt-letter,
+body.dark .option-btn.wrong .opt-letter,
+body.dark .option.wrong .opt-mark,
+body.dark .option-btn.wrong .opt-mark { color: #F2F5F8 !important; opacity: 1 !important; }
 </style>
 </head>
 <body class="dark">
@@ -957,7 +986,7 @@ const FLOW = [
     "type": "question",
     "level": "Extract",
     "marks": "(1 x 2)  2 marks",
-    "q": "2.1.1  According to Source 2A, which event brought colonial rule in Angola to an end in 1974?",
+    "q": "Question 1 of 8. According to Source 2A, which event brought colonial rule in Angola to an end in 1974?",
     "options": [
       "The overthrow of Caetano's government in Portugal on 25 April 1974",
       "The signing of the Alvor Agreement between Portugal and the movements",
@@ -971,7 +1000,7 @@ const FLOW = [
     "type": "question",
     "level": "Interpret",
     "marks": "(1 x 2)  2 marks",
-    "q": "2.1.2  In the context of Portugal's control of Angola, explain what the term 'colonialism' means.",
+    "q": "Question 2 of 8. In the context of Portugal's control of Angola, explain what the term 'colonialism' means.",
     "options": [
       "A system where Portugal held political and economic control over Angola",
       "A system where two countries agree to share the government of a third",
@@ -979,13 +1008,13 @@ const FLOW = [
       "A system where one country trades with another on agreed terms"
     ],
     "correct": 0,
-    "explanation": "Political and economic control by Portugal, given as one full explanation. Option {opt3} is what you write when you have half-remembered the definition. An agreed trade is between two parties who can each walk away, and Angola could not. Say who controlled whom, and in what. Give only one half and a marker can give you one mark of the two."
+    "explanation": "Political and economic control by Portugal, given as one full explanation. Option {opt3} is what you write when you have half-remembered the definition. An agreed trade is between two parties who can each end the arrangement, and Angola could not. Say who controlled whom, and in what. Give only one half and a marker can give you one mark of the two."
   },
   {
     "type": "question",
     "level": "Extract",
     "marks": "(2 x 1)  2 marks",
-    "q": "2.1.3  From Source 2A, give any TWO aims that the Alvor Agreement set out.",
+    "q": "Question 3 of 8. From Source 2A, give any TWO aims that the Alvor Agreement set out.",
     "options": [
       "Independence on 11 November, and a transition government from 31 January",
       "Elections in October 1975, and one army drawn from the three movements",
@@ -999,7 +1028,7 @@ const FLOW = [
     "type": "question",
     "level": "Interpret",
     "marks": "(2 x 2)  4 marks",
-    "q": "2.1.4  Using Source 2A and your own knowledge, comment on why the three movements did not hold to the Alvor Agreement.",
+    "q": "Question 4 of 8. Using Source 2A and your own knowledge, comment on why the three movements did not hold to the Alvor Agreement.",
     "options": [
       "They were divided by ideology and by region, and the source shows dissension among the leadership. Each movement expected to rule alone, so none would accept losing an election",
       "They disagreed about the date of independence and about which city the transitional government should sit in, and the argument over those two questions was never settled at Alvor",
@@ -1025,7 +1054,7 @@ const FLOW = [
     "type": "question",
     "level": "Extract",
     "marks": "(2 x 1)  2 marks",
-    "q": "2.4.1  From Source 2C, quote TWO pieces of evidence that show Cuban and Soviet support for the MPLA.",
+    "q": "Question 5 of 8. From Source 2C, quote TWO pieces of evidence that show Cuban and Soviet support for the MPLA.",
     "options": [
       "7,900 Cuban advisors and troops, and nine Soviet ships with arms",
       "Seventeen sub-Saharan countries, and a wealth of natural resources there",
@@ -1039,7 +1068,7 @@ const FLOW = [
     "type": "question",
     "level": "Extract",
     "marks": "(2 x 1)  2 marks",
-    "q": "2.4.2  From Source 2C, quote TWO pieces of evidence that Soviet military supplies were reaching Angola.",
+    "q": "Question 6 of 8. From Source 2C, quote TWO pieces of evidence that Soviet military supplies were reaching Angola.",
     "options": [
       "44 Soviet flights, and substantial quantities of arms and equipment",
       "7,900 advisors and troops, and 17 sub-Saharan countries assisted",
@@ -1053,7 +1082,7 @@ const FLOW = [
     "type": "question",
     "level": "Interpret",
     "marks": "(2 x 2)  4 marks",
-    "q": "2.4.3  Using Source 2C and your own knowledge, comment on what Cuban and Soviet involvement meant for the Angolan Civil War.",
+    "q": "Question 7 of 8. Using Source 2C and your own knowledge, comment on what Cuban and Soviet involvement meant for the Angolan Civil War.",
     "options": [
       "It kept the MPLA in Luanda and let it defeat the FNLA, and it turned a contest between three movements into a Cold War front that pulled in more outside powers",
       "It ended the fighting quickly enough for the elections promised at Alvor to be held during 1976, and the transitional government was able to hand over power peacefully",
@@ -1066,7 +1095,7 @@ const FLOW = [
   {
     "type": "content",
     "tag": "The finale",
-    "html": "<h2>2.6  The paragraph question, eight marks</h2><p>Using the information in the sources and your own knowledge, write a paragraph of about eight lines explaining how outside powers were drawn into the Angolan Civil War from 1974.</p><p>This is the only item in the run that needs knowledge from beyond the sources. Quoting the sources alone holds you down.</p><p>Four moves: a topic sentence that answers the question, evidence from the sources, at least one point of your own, and a closing sentence that pulls it together.</p>",
+    "html": "<h2>2.6  The paragraph question, eight marks</h2><p>Using the information in the sources and your own knowledge, write a paragraph of about eight lines explaining how outside powers were drawn into the Angolan Civil War from 1974.</p><p>This is the only item in the run that needs knowledge from beyond the sources. Quoting the sources alone holds you down.</p><p>Four moves. A topic sentence that answers the question, evidence from the sources, at least one point of your own, then a closing sentence.</p>",
     "remember": "Eight marks, and the sources can only get you part of the way. The rest has to come from you."
   },
   {
@@ -1156,7 +1185,7 @@ const FLOW = [
   {
     "type": "content",
     "tag": "Beyond the exam",
-    "html": "<h2>What you actually practised</h2><p>Strip the history out and the run was four moves: find the line, say what it means, work out why it was written, then decide what you think.</p><p>You will do that with a rental agreement, a job offer, a news story about somewhere you have never been.</p><p>The exam is just the version where somebody hands you the documents and a time limit.</p>"
+    "html": "<h2>What you actually practised</h2><p>Strip the history out and the run was four moves. Find the line, say what it means, work out why it was written, then decide what you think.</p><p>You will do that with a rental agreement, a job offer, a news story about somewhere you have never been.</p><p>The exam is just the version where somebody hands you the documents and a time limit.</p>"
   },
   {
     "type": "content",
